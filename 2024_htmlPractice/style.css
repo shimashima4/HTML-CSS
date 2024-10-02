@@ -1,0 +1,196 @@
+body{
+    font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+    color: #1E1E1E;
+    line-height: 1.7;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+}
+
+h1{
+    font-size: 36px;
+    line-height: 1.4;
+    margin-top: 30px;
+}
+
+h2{
+    font-size: 36px;
+    line-height: 1.2;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+header,.inner,.inner2{
+    width: 100%;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tag{
+    line-height: 1.7;
+    padding: 5px 12px;
+    background-color: #F5F5F5;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+/* header */
+header{
+    text-align: center;
+    padding: 40px 0;
+}
+.logo{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+/* top */
+.top{
+    background: url(./images/bg_main.png) center center /cover;
+    padding: 240px 0 80px;
+}
+
+.top-text{
+    width: 343px;
+    margin-right: auto;
+    padding: 40px 38px 40px 40px;
+    background-color: white;
+}
+
+.top-text p{
+    font-size: 18px;
+    line-height: 1;
+}
+
+/* discussion */
+.discussion{
+    margin-top: 100px;
+    margin-bottom: -50px;
+}
+
+.discussion h2{
+    text-align: center;
+}
+
+.discussion h2::before{
+    content: "KUMONが向き合うもの";
+    display: block;
+    height: 100%;
+    width: 194px;
+    margin: 0 auto 25px;
+    padding: 8px 16px;
+    background-color: #72C9F3;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+}
+
+.discussion h2::after{
+    content: "";
+    display: block;
+    width: 80px;
+    height: 1px;
+    background-color: #1E1E1E;
+    margin: 20px auto 0;
+}
+
+.content{
+    padding: 50px 0 50px;
+    border-top: 1px solid #DDDDDD;
+}
+
+.content:nth-child(1){
+    border-top: 0px;
+}
+
+.tag-list{
+    display: flex;
+}
+
+.images{
+    position: relative;
+}
+
+.img-text{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.img-text p{
+    padding:20px;
+}
+
+footer{
+    margin-top: 100px;
+    padding: 100px 0;
+    text-align: center;
+    color: white;
+    background-color: #1E1E1E;
+}
+
+.glids{
+    width: 370px;
+    margin: 0 auto;
+    font-size: 14px;
+    font-weight:lighter;
+}
+
+dl{
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom:20px;
+    margin-bottom: 20px;
+    border-bottom: solid white 1px;
+}
+
+dl:nth-child(3){
+    border: 0px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+dt{
+    width: 92px;
+    text-align: left;
+    margin-left: 20px;
+
+}
+
+
+
+.copy{
+    margin-top: 100px;
+}
+
+
+@media(min-width:640px){
+    .inner{
+        max-width: none;
+    }
+
+    .inner2{
+        max-width: 960px;
+    }
+
+    .img-text{
+        width: 410px;
+    }
+
+    .contents-wrap{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .content{
+        border: 0px;
+        width: 450px;
+
+    }
+}
