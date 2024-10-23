@@ -1,0 +1,283 @@
+// $color-text:#888;
+
+// @mixin inner($w:90%,$mw:800px){
+//     width: $w;
+//     max-width: $mw;
+//     margin-left: auto;
+//     margin-right: auto;
+// }
+
+// @mixin flex(){
+//     display:flex;
+//     flex-wrap: wrap;
+//     justify-content: space-between;
+//     align-items: center;
+// }
+
+// @mixin title-main{
+//     font-size: 24px;
+//     border-left: 10px solid;
+// }
+
+// .more{
+//     &__title{
+//         @include title-main();
+//     }
+// }
+
+// .header{
+//     &__inner{
+//         @include inner();
+//         @include flex();
+//     }
+// }
+
+// body{
+//     line-height: (24/14);
+//     letter-spacing: (50/1000)*1em;
+//     // letter-spacing: (50/1000)+em;
+//     // letter-spacing: (50em/1000);
+//     // letter-spacing: (50%/1000);
+//     width: (380/1200*100%);
+//     color: $color-text;
+// }
+
+// h1{
+//     background-color: $color-text;
+// }
+
+// .card{
+//     text-align: center;
+//     .btn{
+//         text-align: right;
+
+//         a{
+//             text-decoration: none;
+//         }
+//     }
+// }
+
+// .footer{
+//     @include inner(80%,100px);
+//     background-color: $color-text;
+
+//     &__inner{
+//         width: 80%;
+//     }
+//     &__logo{
+//         text-align: center;
+//     }
+//     &__copy{
+//         font-size: 12px;
+//     }
+// }
+
+
+// newslly
+@charset "utf-8";
+
+$main-color:#FA6980;
+$gray-text:#888888;
+$gray-time:#BBBBBB;
+$gray-back:#F6F6F6;
+$footer-color:#202124;
+
+@mixin card-text(){
+    padding: 35px;
+    background-color: white;
+}
+
+@mixin inner($w: 90%,$mw: 800px){
+    max-width: $mw;
+    width: $w;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin flex($a: center,$j: space-between){
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $j;
+}
+
+*{
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.header{
+    &__icon{
+        text-align: center;
+        margin-top: 30px;
+    }
+
+}
+
+.content{
+    padding: 60px 0;
+}
+
+.contentBack{
+    padding: 60px 0;
+    background-color: $gray-back;
+}
+
+.contentTitle{
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        width: 10px;
+        height: 20px;
+        top: 4px;
+        left: 0;
+        background-color: $main-color;
+    }
+}
+
+// time
+.time{
+    margin-top: 20px;
+    padding-left: 26px;
+    font-size: 12px;
+    background: url(../images/icon_time.png) 0 0 no-repeat;
+    background-size: 14px;
+    color: $gray-time;
+}
+
+.card{
+    background-color: white;
+    &__content{
+        padding:35px;
+    }
+
+    &__title{
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    &__text{
+        margin: 15px 0 25px
+    }
+
+}
+
+.btn{
+    display: block;
+    width: 160px;
+    padding: 14px 0;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+
+    &--main{
+        background-color: $main-color;
+        color: white;
+    }
+
+    &--black{
+        background-color: $footer-color;
+        color: white;
+        margin-left: auto;
+        margin-top: 25px;
+    }
+}
+
+
+
+.news{
+    &__inner{
+        @include inner(90%,800px);
+    }
+
+    &__content{
+        @include flex();
+        gap: 60px 0;
+    }
+
+    &__article{
+        width: (380%/800*100);;
+    }
+
+}
+
+.trend{
+    &__inner{
+        @include inner(90%,800px);
+    }
+
+    &__wrap{
+        @include flex();
+    }
+
+    &__content{
+        width: (380%/800*100);
+    }
+}
+
+// textBlock
+.textBlock{
+    &__tag{
+        font-style: italic;
+        color: $main-color;
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    &__subtitle{
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    &__content{
+        padding-top: 15px;
+        line-height: (24/14);
+        color: $gray-text;
+    }
+}
+
+.footer{
+    padding: 100px 0 40px;
+    background-color: $footer-color;
+
+    &__inner{
+        @include inner(90%,800px);
+    }
+
+    &__text{
+        font-size: 12px;
+        color: $gray-time;
+    }
+}
+
+// about
+
+.about{
+    &__inner{
+        @include inner(90%,800px);
+    }
+
+    &__article{
+        &:not(:last-child){
+            margin-bottom: 40px;
+        }
+    }
+}
+
+.discover{
+    &__inner{
+        @include inner(90%,800px);
+    }
+
+    &__wrap{
+        @include flex();
+    }
+
+    &__content{
+        width: (240%/800*100);
+    }
+}
