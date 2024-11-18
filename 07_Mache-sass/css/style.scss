@@ -14,14 +14,24 @@ $yellow:#EDAA14;
     transition: all 0.3 ease;
 }
 
-$breakpoints: (
-    "tablet": "screen and (min-width: 640px)",
-    "desktop": "screen and (min-width: 900px)",
-    "full": "screen and (min-width: 1200px)",
-    ) !default;
+// $breakpoints: (
+//     "tablet": "screen and (min-width: 640px)",
+//     "desktop": "screen and (min-width: 900px)",
+//     "full": "screen and (min-width: 1200px)",
+//     ) !default;
+
+$tablet:"screen and (min-width: 640px)";
+$desktop:"screen and (min-width: 900px)";
+$full:"screen and (min-width: 1200px)";
+
+// @mixin m-query($breakpoint) {
+//     @media #{map-get($breakpoints,$breakpoint)} {
+//         @content;
+//     }
+// }
 
 @mixin m-query($breakpoint) {
-    @media #{map-get($breakpoints, $breakpoint)} {
+    @media #{$breakpoint} {
         @content;
     }
 }
@@ -65,7 +75,7 @@ img{
     padding: 40px 0;
     &__inner{
         @include inner(95%,560px);
-        @include m-query(desktop){
+        @include m-query($desktop){
             @include inner(95%,900px)
         }
     }
@@ -100,7 +110,7 @@ img{
 }
 
 .space{
-    @include m-query(desktop){
+    @include m-query($desktop){
         display: none;
     }
 }
@@ -122,13 +132,13 @@ img{
     font-size: 14px;
     font-weight: lighter;
     line-height: (24/14);
-    @include m-query(desktop){
+    @include m-query($desktop){
         text-align: center;
         padding: 180px 0;
     }
     &__inner{
         @include inner(95%,560px);
-        @include m-query(desktop){
+        @include m-query($desktop){
             @include inner(95%,900px);
         }
     }
@@ -150,7 +160,7 @@ img{
         font-size: 14px;
         margin-top: 80px;
 
-        @include m-query(desktop){
+        @include m-query($desktop){
             margin-left: auto;
             margin-right: auto;
         }
@@ -161,25 +171,25 @@ img{
     margin-bottom: 80px;
     &__inner{
         @include inner(95%,560px);
-        @include m-query(desktop){
+        @include m-query($desktop){
             @include inner(95%, 900px);
         }
     }
 
     &__wrap{
-        @include m-query(desktop){
+        @include m-query($desktop){
             @include flex();
         }
     }
 }
 
 .content{
-    @include m-query(desktop){
+    @include m-query($desktop){
         width: (260/900*100%);
     }
     &:not(:last-child){
         margin-bottom: 60px;
-        @include m-query(desktop){
+        @include m-query($desktop){
             margin-bottom: 0;
         }
     }
@@ -215,7 +225,7 @@ img{
     &__inner{
         padding: 80px 0;
         @include inner(95%,560px);
-            @include m-query(desktop){
+            @include m-query($desktop){
                 @include inner(95%,900px );
             }
         }
@@ -247,7 +257,7 @@ img{
     padding: 60px 0 160px;
     &__inner{
         @include inner(95%, 560px);
-        @include m-query(desktop){
+        @include m-query($desktop){
             @include inner(95%,900px )
         }
     }

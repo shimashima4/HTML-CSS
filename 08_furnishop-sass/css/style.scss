@@ -1,0 +1,214 @@
+@charset 'utf-8';
+$breakpoints: (
+    "tablet": "screen and (min-width: 640px)",
+    "desktop": "screen and (min-width: 800px)",
+    "full": "screen and (min-width: 1200px)",
+) !default;
+
+// font-size
+$main-color:#244D4D;
+$card-bg:#F4F4F4;
+
+@mixin m-query($breakpoint) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+@mixin m-flx($a: center, $j: space-between) {
+display: flex;
+flex-wrap: wrap;
+justify-content: $j;
+align-items: $a;
+}
+
+@mixin m-inner($w: 90%, $mw: 640px) {
+width: $w;
+max-width: $mw;
+margin-left: auto;
+margin-right: auto;
+}
+
+@function f-rem($value ){
+    @return ($value/16)+rem;
+}
+
+html{
+    // font-size: (12em/16);
+    // @include m-query(desktop){
+        font-size: (16em/16);
+    // }
+}
+
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: $main-color;
+    line-height: (27/16);
+    font-size: f-rem(16);
+    // ブラウザのデフォルトフォントサイズは16px
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding:(40em/16) 0;
+    &__inner{
+        @include m-inner();
+        @include m-flx();
+        align-items: center
+    }
+
+    &__ul{
+        @include m-flx();
+    }
+
+    &__logo{
+        width: 5em;
+        font-size: f-rem(26);
+        font-weight: bold;
+    }
+
+    &__link{
+        display: block;
+        margin-left: (30em/16);
+    }
+}
+
+.top{
+    font-size: (16rem/16);
+    margin-top: (123em/16);
+    padding: (140em/16) (210em/16) (140em/16) 0;
+    background: url(../images/bg_hero.png) no-repeat center bottom/cover;
+    &__inner{
+        @include m-inner();
+    }
+
+    &__content{
+        padding: (65em/48) (65em/48);
+        font-size: f-rem(48);
+        line-height: (58/48);
+        font-weight: bold;
+        background-color: rgba($color: white, $alpha: 0.6);
+        width: (480em/48);
+    }
+}
+
+// btn
+.btn{
+    display: block;
+    width: (165em/16);
+    font-weight: bold;
+    color: white;
+    background-color: $main-color;
+    text-align: center;
+    padding: (18em/16) 0;
+    border-radius: (10em/16);
+    margin: 0 auto;
+}
+
+// title
+.title{
+    font-size: f-rem(48);
+    padding-bottom: (30em/48);
+    border-bottom: #244D4D 2px solid;
+    margin-bottom: (60em/48);
+    font-weight: bold;
+}
+
+.about{
+    margin-top: (80em/16);
+    font-weight: bold;
+    &__inner{
+        @include m-inner();
+    }
+}
+
+.contentBlock{
+    display: flex;
+    align-items: start;
+    &__img{
+        width: (200em/16);
+        aspect-ratio: 200/120;
+    }
+
+    &__text{
+        width: ((420%/640)*100);
+        font-weight: lighter;
+        align-items: start;
+    }
+
+    &__title{
+        font-size: (24em/16);
+        font-weight: bold;
+    }
+
+    &:not(:last-child){
+        margin-bottom: (50em/16);
+    }
+}
+
+.products{
+    margin: (120em/16) 0;
+    &__inner{
+        @include m-inner();
+    }
+
+    &__flex{
+        @include m-flx();
+        gap: (50em/16) 0;
+        margin-bottom: (60em/16);
+    }
+}
+
+
+// card
+.card{
+    width: (300%/640*100);
+    padding: (45em/16) 0;
+    background-color: $card-bg;
+    text-align: center;
+
+    &__title{
+        font-size: f-rem(24);
+        line-height: 1.1;
+        font-weight: bold;
+        margin-bottom: (15em/24);
+    }
+
+    &__dollar{
+        display: block;
+        padding-bottom: (30em/16);
+    }
+}
+
+.footer{
+    padding: (120em/16) 0;
+    background-color: $main-color;
+    color: white;
+    &__inner{
+        @include m-inner();
+        @include m-flx();
+        gap: (60em/16) 0;
+    }
+
+    &__texts{
+        width: (300%/640*100);
+        font-size: f-rem(16);
+    }
+
+    &__mediumText{
+        font-size: (24em/16);
+        line-height: (29/24);
+        margin-bottom: (24em/16);
+        font-weight: bold;
+    }
+
+    &__category{
+        :not(:last-child){
+            margin-bottom: (15em/16);
+        }
+    }
+}
