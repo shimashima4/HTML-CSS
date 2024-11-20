@@ -22,7 +22,7 @@ justify-content: $j;
 align-items: $a;
 }
 
-@mixin m-inner($w: 90%, $mw: 640px) {
+@mixin m-inner($w: 90%, $mw: 1000px) {
 width: $w;
 max-width: $mw;
 margin-left: auto;
@@ -58,7 +58,7 @@ body{
     &__inner{
         @include m-inner();
         @include m-flx();
-        align-items: center
+        align-items: center;
     }
 
     &__ul{
@@ -123,21 +123,44 @@ body{
     font-weight: bold;
     &__inner{
         @include m-inner();
+        @include m-query(desktop){
+            @include m-inner(90,1000px);
+        }
+    }
+
+    &__wrap{
+        @include m-query(desktop){
+            @include m-flx();
+            margin-bottom: (-50em/16);
+        }
     }
 }
 
 .contentBlock{
-    display: flex;
-    align-items: start;
+    @include m-flx();
+    @include m-query(desktop){
+        width: (470%/1000*100);
+        align-items: start;
+    }
     &__img{
         width: (200em/16);
-        aspect-ratio: 200/120;
+        margin-right: (20em/16);
+        @include m-query(desktop){
+            width: (200%/470*100);
+            margin-right: 0;
+        }
+        aspect-ratio: 1/1;
     }
 
     &__text{
         width: ((420%/640)*100);
         font-weight: lighter;
         align-items: start;
+        flex: 1;
+        @include m-query(desktop){
+            width: (250%/470*100);
+            flex: none;
+        }
     }
 
     &__title{
@@ -148,12 +171,18 @@ body{
     &:not(:last-child){
         margin-bottom: (50em/16);
     }
+    @include m-query(desktop){
+        margin-bottom: (50em/16);
+    }
 }
 
 .products{
     margin: (120em/16) 0;
     &__inner{
         @include m-inner();
+        @include m-query(desktop){
+            @include m-inner(90,1000px);
+        }
     }
 
     &__flex{
@@ -170,6 +199,10 @@ body{
     padding: (45em/16) 0;
     background-color: $card-bg;
     text-align: center;
+
+    @include m-query(desktop){
+        width: (300%/1000*100);
+    }
 
     &__title{
         font-size: f-rem(24);
@@ -211,4 +244,8 @@ body{
             margin-bottom: (15em/16);
         }
     }
+}
+
+.copy{
+    font-size: (12rem/16);
 }
