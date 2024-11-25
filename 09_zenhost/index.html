@@ -4,17 +4,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>zenhost</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/the-new-css-reset/css/reset.min.css">
+    <link rel="stylesheet" href="./css/style.min.css">
 </head>
 <body>
     <header class="header">
         <div class="header__inner">
-            <img src="./images/img_logo.png" alt="">
+            <img src="./images/img_logo.png" class="header__logo" alt="">
 
-            <img src="./index.html" alt="" class="hamburger">
-            <ul class="header__ul">
-                s
-            </ul>
+            <img src="./images/icon_menu.png" alt="" class="header__hamburger">
+            <nav class="header__nav">
+                <ul class="header__ul">
+                    <li class="header__li">VPS hosting</li>
+                    <li class="header__li">Shared hosting</li>
+                    <li class="header__li">Domains</li>
+                </ul>
+                <ul class="header__ul">
+                    <li class="header__li">About us</li>
+                    <li class="header__li">Contact</li>
+                </ul>
+            </nav>
         </div>
     </header>
+    <main>
+        <section class="top">
+            <div class="top__inner">
+                <div class="top__wrap">
+                    <div class="top__text">
+                        <h2 class="top__title">Fast performance, uptime 99% guarantee</h2>
+                        <p>Curabitur augue sem, mollis vel purus sit amet, elementum molestie urna.
+                        Vivamus felis orci, egestas sed massa sit amet, ultrices venenatis lectus.</p>
+                    </div>
+                    <div class="top__low">
+                        <div class="top__icons">
+                            <a href="" class="top__icon" ><img src="./images/icon_facebook.png" alt=""></a>
+                            <a href="" class="top__icon" ><img src="./images/icon_twitter.png" alt=""></a>
+                            <a href="" class="top__icon" ><img src="./images/icon_linkedin.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <img src="./images/img_about.png" class="top__img" alt="">
+            </div>
+        </section>
+        <section class="advantages">
+            <div class="advantages__inner">
+                <h2 class="title title--orange">Advantages</h2>
+                <div class="advantages__article">
+                    <article class="article">
+                        <img src="./images/img_advantages01.png" alt="">
+                        <h3 class="article__title">Fast, secure and always online.</h3>
+                        <p class="article__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                        magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                        <a href="#" class="btn btn--article">Order now ></a>
+                    </article>
+                    <article class="article">
+                        <img src="./images/img_advantages02.png" alt="">
+                        <h3 class="article__title">Data providers.</h3>
+                        <p class="article__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                        magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                        <a href="#" class="btn btn--article">Order now ></a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="features__inner">
+                <h2 class="title title--blue">Features</h2>
+                <div class="features__content">
+                    <article class="content">
+                        <div class="content__texts">
+                            <h3 class="content__title">Close security gaps</h3>
+                            <p class="content__paragraph">Najnoviji hardware uz procesore zadnje generacije, te veliki izbor vrhunskih značajki jamstvo su stabilnosti i brzine.</p>
+                            <ul class="category">
+                                <li class="category__list">VPS hosting</li>
+                                <li class="category__list">Shared hosting</li>
+                                <li class="category__list">Domains</li>
+                                <li class="category__list">Other</li>
+                            </ul>
+                        </div>
+                        <img src="./images/pic_features01.png" alt="" class="content__img">
+                    </article>
+                    <article class="content">
+                        <div class="content__texts">
+                            <h3 class="content__title">Close security gaps</h3>
+                            <p class="content__paragraph">Najnoviji hardware uz procesore zadnje generacije, te veliki izbor vrhunskih značajki jamstvo su stabilnosti i brzine.</p>
+                            <ul class="category">
+                                <li class="category__list">VPS hosting</li>
+                                <li class="category__list">Shared hosting</li>
+                                <li class="category__list">Domains</li>
+                                <li class="category__list">Other</li>
+                            </ul>
+                        </div>
+                        <img src="./images/pic_features02.png" alt="" class="content__img">
+                    </article>
+                    <article class="content">
+                        <div class="content__texts">
+                            <h3 class="content__title">Close security gaps</h3>
+                            <p class="content__paragraph">Najnoviji hardware uz procesore zadnje generacije, te veliki izbor vrhunskih
+                                značajki jamstvo su stabilnosti i brzine.</p>
+                            <ul class="category">
+                                <li class="category__list">VPS hosting</li>
+                                <li class="category__list">Shared hosting</li>
+                                <li class="category__list">Domains</li>
+                                <li class="category__list">Other</li>
+                            </ul>
+                        </div>
+                        <img src="./images/pic_features03.png" alt="" class="content__img">
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__text">
+                <h3 class="footer__title">Contact us</h3>
+                <div class="data">
+                    <dl class="data__block">
+                        <dt class="data__title">Address.</dt>
+                        <dd class="data__info">ZenHost d.o.o. Some Adress 32, City</dd>
+                    </dl>
+                    <dl class="data__block">
+                        <dt class="data__title">Phone.</dt>
+                        <dd class="data__info">+385 1 55234234</dd>
+                    </dl>
+                    <dl class="data__block">
+                        <dt class="data__title">Mail.</dt>
+                        <dd class="data__info">hello@zenhosast.com</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="footer__copy"><p>&copy; 2022 Zenhost</p></div>
+        </div>
+    </footer>
 </body>
 </html>
